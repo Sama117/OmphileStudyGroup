@@ -1,0 +1,33 @@
+﻿@model IEnumerable<OmphileStudyGroup.Models.Student>
+        @{
+            ViewBag.Title = "StudentView";
+
+
+        <h2>StudentView</h2>
+
+        <h2>List of Students</h2>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        >> In this overload it is the name and the action >> Link going nowhere.
+        </p>
+
+        
+        <tr>
+            <th>@Html.DisplayNameFor(model => Students.StudentNumber)</th>
+            <th>@Html.DisplayNameFor(model => Students.Name)</th>
+            <th>@Html.DisplayNameFor(model => Students.Surname)</th>
+            <th>@Html.DisplayNameFor(model => Students.emailAddress)</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model) //For each person
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => Student.StudentNumber)</td>
+                <td>@Html.DisplayFor(modelItem => Student.Name)</td>
+                <td>@Html.DisplayFor(modelItem => Student.Surname)</td>
+                <td>@Html.DisplayFor(modelItem => Student.emailAddress)</td>
+            </tr>
+
+        }
+            }
